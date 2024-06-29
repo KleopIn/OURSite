@@ -1,70 +1,56 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин одежды GALANCE</title>
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>GALANCE</h1>
+            <h1>Магазин одежды GALANCE</h1>
             <nav>
                 <ul>
-                    <li><a href="#home">Главная</a></li>
-                    <li><a href="#products">Товары</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Магазин</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="search-icon">
-                <i class="fas fa-search"></i>
-            </div>
         </div>
     </header>
-    
+
     <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h2>Добро пожаловать в GALANCE</h2>
-                <p>Лучшие предложения для вас</p>
-                <a href="#products" class="btn">Посмотреть товары</a>
-            </div>
-        </section>
-        
-        <section id="products" class="products">
-            <div class="container">
-                <div class="product">
-                    <video src="img/IMG_6402.MP4" autoplay loop muted></video>
-                    <h2>GALANCE "Shtrih Code" T-shirt</h2>
-                    <p>• Состав: Хлопок 100%<br>
-                       • Плотность: Кулирная гладь 200 г/м<br>
-                       • Принт: Шелкография<br>
-                       • Крой: Приталенный оверсайз<br>
-                       • Рекомендация по стирке: На изнанку при 30°</p>
-                    <button onclick="addToCart('GALANCE Shtrih Code T-shirt')">Добавить в корзину</button>
+        <div class="container">
+            <section class="products">
+                <div class="product-card">
+                    <img src="product1.jpg" alt="Product 1">
+                    <h2>Продукт 1</h2>
+                    <p>$29.99</p>
                 </div>
-                
-                <div class="product">
-                    <video src="product2.mp4" autoplay loop muted></video>
-                    <h2>Товар 2</h2>
-                    <p>Описание товара 2</p>
-                    <button onclick="addToCart('Товар 2')">Добавить в корзину</button>
+                <div class="product-card">
+                    <img src="img/a2202bce-22a7-4b95-b6a3-3facab7b6695.jpg" alt="Product 2">
+                    <h2>Продукт 2</h2>
+                    <p>$39.99</p>
                 </div>
-            </div>
-        </section>
+                <div class="product-card">
+                    <img src="product3.jpg" alt="Product 3">
+                    <h2>Продукт 3</h2>
+                    <p>$49.99</p>
+                </div>
+                <!-- Добавьте больше карточек товаров по мере необходимости -->
+            </section>
+        </div>
     </main>
-    
+
     <footer>
         <div class="container">
-            <p>&copy; 2024 GALANCE. Все права защищены.</p>
+            <p>&copy; 2024 Магазин одежды GALANCE. Все права защищены.</p>
         </div>
     </footer>
-    
-    <script src="js/scripts.js"></script>
 </body>
 </html>
