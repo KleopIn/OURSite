@@ -19,20 +19,23 @@ body {
 header {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 20px 0;
+    padding: 10px 20px;
     text-align: center;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     letter-spacing: 1.5px;
-    color: #007BFF;
+    color: #333;
 }
 
 nav ul {
@@ -40,7 +43,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin: 0;
 }
 
 nav li {
@@ -60,7 +63,7 @@ nav a:hover {
 
 main {
     flex: 1;
-    padding: 80px 0 20px; /* Добавлен отступ сверху для размещения под фиксированным хедером */
+    padding: 100px 0 20px; /* Добавлен отступ сверху для размещения под фиксированным хедером */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +79,7 @@ main {
 
 .product-card {
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 15px; /* Закругленные углы */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
@@ -84,13 +87,25 @@ main {
     transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
     animation: slideIn 0.5s ease-in-out;
     border: 2px solid transparent;
-    border-image: linear-gradient(135deg, #007BFF, #00BFFF) 1;
+    position: relative;
 }
 
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-color: #00BFFF;
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px; /* Закругленные углы для градиентной обводки */
+    background: linear-gradient(135deg, #007BFF, #00BFFF);
+    z-index: -1;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.product-card:hover::before {
+    opacity: 1;
 }
 
 .product-card img {
@@ -99,7 +114,7 @@ main {
     margin-bottom: 15px;
     height: auto;
     transition: transform 0.3s;
-    border-radius: 5px;
+    border-radius: 10px; /* Закругленные углы для изображений */
 }
 
 .product-card img:hover {
