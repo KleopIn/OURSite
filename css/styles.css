@@ -10,7 +10,6 @@ body {
 }
 
 .container {
-    display: grid;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
@@ -135,14 +134,14 @@ header {
 
 main {
     flex: 1;
-    padding: 100px 0 20px; /* Добавлен отступ сверху для размещения под фиксированным хедером */
+    padding: 100px 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     animation: fadeIn 1s ease-in-out;
 }
 
-.categories {
+.gender-categories {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,7 +153,7 @@ main {
     margin: 20px 0;
 }
 
-.category-list {
+.gender-list {
     list-style: none;
     padding: 0;
     display: flex;
@@ -162,9 +161,9 @@ main {
     gap: 20px;
 }
 
-.category-list li {
+.gender-list li {
     margin: 0;
-    flex: 1 1 calc(25% - 20px);
+    flex: 1 1 calc(50% - 20px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,81 +175,35 @@ main {
     text-align: center;
 }
 
-.category-list li a {
+.gender-list li a {
     text-decoration: none;
     color: #333;
     font-size: 1.2rem;
     transition: color 0.3s;
 }
 
-.category-list li:hover {
+.gender-list li:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.category-list li a:hover {
+.gender-list li a:hover {
     color: #007BFF;
 }
 
-.products {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.product-card {
-    background-color: #fff;
-    border-radius: 15px; /* Закругленные углы */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-    animation: slideIn 0.5s ease-in-out;
-    border: 2px solid transparent;
-    position: relative;
-}
-
-.product-card::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: 15px; /* Закругленные углы для градиентной обводки */
-    background: linear-gradient(135deg, #007BFF, #00BFFF);
-    z-index: -1;
-    transition: opacity 0.3s;
-    opacity: 0;
-}
-
-.product-card:hover::before {
-    opacity: 1;
-}
-
-.product-card img {
-    max-width: 100%;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 15px;
-    height: auto;
-    transition: transform 0.3s;
-    border-radius: 10px; /* Закругленные углы для изображений */
-}
-
-.product-card img:hover {
-    transform: scale(1.1);
-}
-
-.product-card h2 {
-    font-size: 1.5rem;
-    margin: 0 0 10px;
-}
-
-.product-card .price {
-    font-size: 1.2rem;
-    color: #007BFF;
+.back-button:hover {
+    background-color: #0056b3;
 }
 
 footer {
@@ -265,10 +218,9 @@ footer p {
     font-size: 1rem;
 }
 
-@media (max-width:  800px) {
+@media (max-width: 800px) {
     .container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3);
+        grid-template-columns: 1fr;
     }
 }
 
@@ -276,9 +228,4 @@ footer p {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-}
-
-@keyframes slideIn {
-    from { transform: translateY(20px); }
-    to { transform: translateY(0); }
 }
